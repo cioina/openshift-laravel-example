@@ -1,0 +1,54 @@
+{
+    "name": "cioina/blog",
+    "description": "Fresh install of the Laravel and friends.",
+    "keywords": [ "framework", "laravel" ],
+    "license": "MIT",
+    "type": "project",
+  "require": {
+    "php": "^7.3.0",
+    "psr/container": "1.1.1",
+    "ramsey/collection": "~1.2.2",
+    "league/commonmark": "~1.6.7",
+    "laravel/framework": "^8.83.27",
+    "laravelcollective/html": "~6.3.0"
+  },
+    "autoload": {
+        "classmap": [
+            "database"
+        ],
+        "psr-4": {
+            "Maatwebsite\\Excel\\": "src/vendor/maatwebsite/excel/src/Maatwebsite/Excel",
+            "Kris\\LaravelFormBuilder\\": "src/vendor/kris/laravel-form-builder/src/Kris/LaravelFormBuilder",
+            "Wpb\\StringBladeCompiler\\": "src/vendor/wpb/string-blade-compiler/src/Wpb/StringBladeCompiler",
+            "Distilleries\\DatatableBuilder\\": "src/vendor/distilleries/datatable-builder/src/Distilleries/DatatableBuilder",
+            "Distilleries\\FormBuilder\\": "src/vendor/distilleries/form-builder/src/Distilleries/FormBuilder",
+            "Distilleries\\MailerSaver\\": "src/vendor/distilleries/mailersaver/src/Distilleries/MailerSaver",
+            "Distilleries\\PermissionUtil\\": "src/vendor/distilleries/permission-util/src/Distilleries/PermissionUtil",
+            "Distilleries\\Expendable\\": "src/vendor/distilleries/expendable/src/Distilleries/Expendable",
+            "Chumper\\Datatable\\": "src/vendor/distilleries/datatable/src/Chumper/Datatable",
+            "Spatie\\Cors\\": "src/vendor/spatie/laravel-cors/src/",
+            "Tymon\\JWTAuth\\": "src/vendor/tymon/jwt-auth/src/",
+            "Firebase\\JWT\\": "src/vendor/firebase/php-jwt/src/",
+            "Acioina\\UserManagement\\": "src/acioina/site/src/Acioina/UserManagement"
+        },
+        "files": [
+            "src/vendor/phpoffice/phpexcel/Classes/PHPExcel.php",
+            "src/vendor/kris/laravel-form-builder/src/helpers.php",
+            "src/vendor/distilleries/form-builder/src/helpers.php"
+        ]
+
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "extra": {
+        "laravel": {
+            "dont-discover": [
+            ]
+        }
+    },
+   "config": {
+        "preferred-install": "dist",
+        "sort-packages": true,
+        "optimize-autoloader": true
+    }
+}
