@@ -32,11 +32,11 @@ $cfg['MailgunRecipient'] = getenv('MAILGUN_RECIPIENT');
 $cfg['SSLPort'] =      '443';
 $cfg['DownForMaintenanceMessage'] = 'This website is down for maintenance. Please come back later!';
 
-$cfg['MySqlHost'] =     getenv('MYSQL_SERVICE_HOST');
-$cfg['MySqlDatabase'] = getenv('DB_DATABASE');
+$cfg['MySqlHost'] =     'mysql';
+$cfg['MySqlDatabase'] = getenv('database-name');
 $cfg['MySqlPort'] =     '3306';
-$cfg['MySqlUser'] =     getenv('DB_USERNAME');
-$cfg['MySqlPWord'] =    getenv('DB_PASSWORD');
+$cfg['MySqlUser'] =     getenv('database-user');
+$cfg['MySqlPWord'] =    getenv('database-password');
 
 $cfg['phpMyAdminBaseDir'] = getenv('PMA_BASE_DIR');
 $cfg['phpMyAdminUri'] = $cfg['APP_URL'] .'/%s/index.php';
