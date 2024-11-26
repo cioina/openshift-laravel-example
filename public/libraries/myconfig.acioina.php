@@ -33,10 +33,10 @@ $cfg['SSLPort'] =      '443';
 $cfg['DownForMaintenanceMessage'] = 'This website is down for maintenance. Please come back later!';
 
 $cfg['MySqlHost'] =     'mysql';
-$cfg['MySqlDatabase'] = getenv('database-name');
+$cfg['MySqlDatabase'] = getenv('DB_DATABASE');
 $cfg['MySqlPort'] =     '3306';
-$cfg['MySqlUser'] =     getenv('database-user');
-$cfg['MySqlPWord'] =    getenv('database-password');
+$cfg['MySqlUser'] =     getenv('DB_USERNAME');
+$cfg['MySqlPWord'] =    getenv('DB_PASSWORD');
 
 $cfg['phpMyAdminBaseDir'] = getenv('PMA_BASE_DIR');
 $cfg['phpMyAdminUri'] = $cfg['APP_URL'] .'/%s/index.php';
