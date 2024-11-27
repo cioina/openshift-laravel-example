@@ -33,7 +33,7 @@ $cfg['SSLPort'] =      '443';
 $cfg['DownForMaintenanceMessage'] = 'This website is down for maintenance. Please come back later!';
 
 $cfg['MySqlHost'] =     'mysql';
-$cfg['MySqlDatabase'] = getenv('DB_DATABASE');
+$cfg['MySqlDatabase'] = 'myblog';
 $cfg['MySqlPort'] =     '3306';
 $cfg['MySqlUser'] =     getenv('DB_USERNAME');
 $cfg['MySqlPWord'] =    getenv('DB_PASSWORD');
