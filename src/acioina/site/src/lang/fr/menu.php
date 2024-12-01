@@ -1,0 +1,20 @@
+<?php
+return [
+    'data_protection_page'              => 'Protection générale des données',
+    'faq_page'                          => 'Questions et réponses',
+    'my_profile'                        => 'Mon profil',
+    'client_logout'                     => 'Déconnexion',
+    'client_login'                      => 'S\'identifier',
+    'user_account'                      => 'Compte',
+    'search_pages'                      => 'Chercher',
+    'client_registration'               => 'Enregistrement de l\'utilisateur',
+    'facebook_email'                    => 'Envoyer un email',
+    'facebook_status'                   => 'Statut Facebook',
+    'facebook_logout'                   => 'Facebook Déconnexion',
+    'facebook_login'                    => 'Facebook Connexion',
+    'contact_page'                      => 'Contactez-nous',
+    'home_page'                         => 'Accueil',
+    'image'                             => 'Galerie d\'images',
+    'blog'                              => 'Mon blog',
+    'datatable'                         => 'Liste de tous',
+];

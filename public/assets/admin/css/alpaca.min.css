@@ -1,0 +1,606 @@
+/** Added to outer field elements to hide them **/
+.alpaca-hidden {
+    display: none;
+}
+
+/** Added to every field outer element **/
+/*.alpaca-field {
+}*/
+
+/** Added to every container outer field element **/
+.alpaca-container {
+}
+
+/** Added to the optional label (or legend) accompanying any container **/
+/*.alpaca-container-label {
+}*/
+
+/** Added to every container item field within a container **/
+
+/** Added to the first container item field within a container **/
+.alpaca-container-item-first {
+}
+
+/** Added to the last container item field within a container **/
+.alpaca-container-item-last {
+}
+
+/** Added to a container to indicate it is empty **/
+.alpaca-container-empty {
+}
+
+/** Added to the dom element holding the toolbar for an array **/
+.alpaca-array-toolbar {
+}
+
+/** Added to a button in the array toolbar that triggers an action **/
+.alpaca-array-toolbar-action {
+}
+
+/** Added to the dom element holding the actionbar for each array item **/
+.alpaca-array-actionbar {
+}
+
+/** Added to a button in an array item actionbar that triggers an action **/
+.alpaca-array-actionbar-action {
+}
+
+/** Added to every control outer field element **/
+.alpaca-control {
+    margin-top: 5px;
+}
+
+/** Added to the optional label accompanying any control **/
+.alpaca-control-label {
+    vertical-align: top;
+}
+
+/** ******************************************************** **/
+/**                        STATE LABELS                      **/
+/** ******************************************************** **/
+
+/** Added to top-most control when rendering in display mode **/
+.alpaca-display {
+}
+
+/** Added to top-most control when rendering in create mode **/
+.alpaca-create {
+}
+
+/** Added to top-most control when rendering in edit mode **/
+.alpaca-edit {
+}
+
+/** Added to any field that is optional **/
+/*.alpaca-required {
+}*/
+
+/** Added to any field that is required **/
+.alpaca-optional {
+}
+
+/** Added to any field that is readonly **/
+.alpaca-readonly {
+}
+
+/** Added to any field that is disabled **/
+.alpaca-disabled {
+}
+
+/** Added to the container that holds Alpaca field helper text **/
+.alpaca-helper {
+}
+
+/** Added to form containers that are rendering in horizontal mode **/
+.alpaca-horizontal {
+}
+
+/** Added to form containers that are rendering in vertical mode **/
+.alpaca-vertical {
+}
+
+/** Added to the top most container element **/
+/*.alpaca-top {
+}*/
+
+/** Added to fields that are valid **/
+.alpaca-valid {
+}
+
+/** Added to fields that have run through validation and are invalid **/
+.alpaca-invalid {
+}
+
+/** Added to fields that have run through validation and are invalid but are currently hiding invalidation errors **/
+.alpaca-invalid-hidden {
+}
+
+/* Added to additional DOM elements to mark validation messages */
+/*.alpaca-message {
+}*/
+
+/** Added to messages that are for invalidation states that are current hidden (hideInitValidationError) **/
+/*.alpaca-message-hidden {
+}*/
+
+/** Added to buttons that are marked disabled */
+.alpaca-button-disabled {
+}
+
+
+
+/** ******************************************************** **/
+/**                           ICONS                          **/
+/** ******************************************************** **/
+
+.alpaca-icon-helper {
+}
+
+.alpaca-icon-required {
+}
+
+
+/** ******************************************************** **/
+/**                           OTHER                          **/
+/** ******************************************************** **/
+
+.alpaca-autocomplete {
+}
+
+
+
+/** Added to indicate hover state **/
+.alpaca-hover {
+}
+
+/** General purpose HTML clear **/
+.alpaca-clear {
+    clear: both;
+}
+
+.alpaca-float-right {
+    float: right;
+}
+
+
+/** ************************************** **/
+/** TWITTER TYPEAHEAD                      **/
+/** ************************************** **/
+
+.twitter-typeahead .tt-dropdown-menu {
+    background-color: white;
+    border: 1px #ccc solid;
+    padding: 10px;
+    color: #999;
+    width: 100%;
+    padding-bottom: 0px;
+}
+
+    .twitter-typeahead .tt-dropdown-menu P {
+        font-size: 1em;
+    }
+
+.tt-suggestion.tt-is-under-cursor {
+    background-color: #ccc;
+    color: #333;
+}
+
+.tt-dropdown-menu {
+    background-color: white;
+    border: 1px solid rgb(204, 204, 204);
+    width: 100%;
+}
+
+
+
+
+/** ************************************** **/
+/** EDITOR FIELD                           **/
+/** ************************************** **/
+
+.alpaca-controlfield-editor {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    border: 1px #ccc solid;
+}
+
+    .alpaca-controlfield-editor .control-field-editor-el {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+    }
+
+
+
+/** ************************************** **/
+/** DATEPICKER (jQueryUI)                  **/
+/** ************************************** **/
+
+#ui-datepicker-div {
+    display: none;
+    background-color: white;
+    z-index: 9999999 !important;
+    width: 22em !important;
+}
+
+/* Fix for Chrome issue with Button text */
+.ui-button .ui-button-text {
+    white-space: nowrap;
+}
+
+.ui-datepicker {
+    z-index: 100;
+}
+
+
+
+
+
+
+
+
+/** ************************************** **/
+/** FILE UPLOAD (jQueryUI)                 **/
+/** ************************************** **/
+
+.alpaca-fileupload-container {
+    border: 1px #ccc solid;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+    .alpaca-fileupload-container .row {
+        margin-bottom: 10px;
+    }
+
+.alpaca-fileupload-well {
+    /*border: 1px #ccc solid;*/
+    padding: 10px;
+    border-radius: 5px;
+    min-height: 100px;
+}
+
+.alpaca-fileupload-container table {
+    border: 1px #ccc solid;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.alpaca-fileupload-well p {
+    padding-top: 20px;
+    color: #888;
+}
+
+.alpaca-fileupload-well table tbody.files tr td.name {
+    word-wrap: break-word;
+}
+
+
+
+
+
+
+
+/** ************************************** **/
+/** ACE EDITOR                             **/
+/** ************************************** **/
+
+.ace_editor {
+    border: 1px solid rgb(204, 204, 204);
+}
+
+
+
+/** ************************************** **/
+/** CK EDITOR                             **/
+/** ************************************** **/
+
+.alpaca-field-ckeditor.alpaca-invalid > .cke {
+    border-color: #f04124;
+}
+
+.has-error .multiselect {
+    border-color: #a94442;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+}
+
+
+/** ************************************** **/
+/** OPTIONTREE                             **/
+/** ************************************** **/
+
+.alpaca-field-optiontree {
+}
+
+    .alpaca-field-optiontree .optiontree {
+    }
+
+        .alpaca-field-optiontree .optiontree .optiontree-selector {
+        }
+
+    .alpaca-field-optiontree.optiontree-horizontal {
+    }
+
+        .alpaca-field-optiontree.optiontree-horizontal .optiontree {
+            display: inline-block;
+        }
+
+            .alpaca-field-optiontree.optiontree-horizontal .optiontree .optiontree-selector {
+                display: inline-block;
+                padding-left: 4px;
+            }
+
+        .alpaca-field-optiontree.optiontree-horizontal input {
+            display: inline-block;
+            width: auto;
+        }
+
+        .alpaca-field-optiontree.optiontree-horizontal label {
+            display: block;
+        }
+
+
+
+
+.alpaca-field-tablerow label.control-label {
+    display: none;
+}
+
+.alpaca-field-table .actionbar {
+    white-space: nowrap;
+    text-align: center;
+}
+
+.alpaca-field-table table tr td .alpaca-field {
+    width: 100%;
+}
+
+    .alpaca-field-table table tr td .alpaca-field .form-control {
+        width: 100%;
+    }
+
+.alpaca-field-table .form-group {
+    margin-bottom: 0px;
+}
+
+    .alpaca-field-table .form-group.alpaca-field-checkbox {
+        text-align: center;
+    }
+
+.alpaca-field-table .alpaca-control.checkbox {
+    /*
+    margin: 0px;
+    padding: 0px;
+    */
+    padding-top: 6px;
+}
+
+/*
+.alpaca-field-table .alpaca-control.checkbox input[type='checkbox']
+{
+    margin-left: -16px;
+    margin-top: -3px;
+}
+*/
+
+.alpaca-field-table table tr td.actionbar .alpaca-array-actionbar {
+    padding-bottom: 0px;
+}
+
+.alpaca-field-table .actionbar .alpaca-array-actionbar.btn-group {
+    width: auto;
+}
+
+.alpaca-table-column-hidden {
+    display: none;
+}
+
+.alpaca-field-radio.disabled .alpaca-control.radio {
+    color: grey;
+}
+
+    .alpaca-field-radio.disabled .alpaca-control.radio label {
+        cursor: inherit;
+    }
+
+@media screen {
+    label {
+        margin-left: 0;
+    }
+
+    .alpaca-control {
+        display: block;
+        width: 100%;
+        /*margin-left: -10px;*/
+        padding: 5px 10px 5px 10px;
+        font-size: 18px;
+        line-height: 1.42857143;
+        color: black;
+        background-color: #fff;
+        background-image: none;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+        box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+        -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+        -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+        transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+    }
+
+    div > div.alpaca-top {
+        text-align: left;
+        background: url('images/noise.png') rgba(0,0,0,0.1);
+        padding: 20px;
+        font-style: normal;
+    }
+
+    .display-view .alpaca-control-label,
+    .display-view .alpaca-control {
+        font-style: normal;
+        text-align: left;
+    }
+
+    .display-view .alpaca-container-label {
+        font-style: normal;
+    }
+
+    .alpaca-control:focus {
+        border-color: #66afe9;
+        outline: 0;
+        -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, .6);
+        box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, .6);
+    }
+
+    .alpaca-field .alpaca-invalid .alpaca-control {
+        border-color: #a94442;
+        -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+        box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    }
+
+        .alpaca-field .alpaca-invalid .alpaca-control:focus {
+            border-color: #a94442;
+            outline: 0;
+            -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(224, 43, 23, 0.6);
+            box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(224, 43, 23, 0.6);
+        }
+
+    .alpaca-control::-moz-placeholder {
+        color: #999;
+        opacity: 1;
+    }
+
+    .alpaca-control:-ms-input-placeholder {
+        color: #999;
+    }
+
+    .alpaca-control::-webkit-input-placeholder {
+        color: #999;
+    }
+
+    .alpaca-control[disabled],
+    .alpaca-control[readonly],
+    fieldset[disabled] .alpaca-control {
+        cursor: not-allowed;
+        background-color: #eee;
+        opacity: 1;
+    }
+
+    textarea.alpaca-control {
+        height: auto;
+    }
+
+    /*input[type="search"] {
+        -webkit-appearance: none;
+    }*/
+
+    .alpaca-form {
+        text-align: left;
+        font-style: normal;
+        font-weight: normal;
+        font-variant: normal;
+        text-transform: none;
+        background: url('images/noise.png') rgba(0,0,0,0.1);
+        padding: 20px;
+    }
+
+    .alpaca-control-label {
+        position: relative;
+        min-height: 1px;
+        text-align: left;
+        color: blue;
+    }
+
+    .alpaca-required .alpaca-control-label:after,
+    .alpaca-message:before {
+        font-family: "Glyphicons Halflings";
+        font-style: normal;
+        font-weight: normal;
+        font-variant: normal;
+        text-transform: none;
+        line-height: 1;
+        -webkit-font-smoothing: antialiased;
+        display: inline-block;
+        text-decoration: inherit;
+        padding-right: 5px;
+        text-decoration: none;
+    }
+
+    .alpaca-message,
+    .alpaca-message:before {
+        color: #E33100;
+        font-size: 1em;
+    }
+
+        .alpaca-message:before {
+            content: "\e086";
+        }
+
+    .alpaca-required .alpaca-control-label:after {
+        content: "\002a";
+        color: #E33100;
+        font-size: .7em;
+        margin-left: 3px;
+    }
+
+    .alpaca-container-item {
+        padding: 10px 0 10px 0;
+    }
+
+    .alpaca-container-label {
+        font-size: 1.5em;
+        text-align: center;
+        margin: 0 auto;
+    }
+
+
+    .alpaca-field-array .alpaca-container-label {
+        font-size: 1.3em;
+        color: blue;
+    }
+
+    .alpaca-form-buttons-container {
+        text-align: center;
+    }
+
+    .alpaca-form-button:disabled,
+    .alpaca-form-button[disabled] {
+        background-color: #e0e0e0;
+        background-image: none;
+        color: #333;
+        cursor: default;
+    }
+
+    .alpaca-form-button {
+        display: inline-block;
+        padding: 6px 12px;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 1.42857143;
+        text-align: center;
+        white-space: nowrap;
+        vertical-align: middle;
+        -ms-touch-action: manipulation;
+        touch-action: manipulation;
+        cursor: pointer;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        background-image: none;
+        border: 1px solid transparent;
+        border-radius: 4px;
+        color: #fff;
+        background-image: linear-gradient(to bottom,#337ab7 0,#265a88 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff337ab7', endColorstr='#ff265a88', GradientType=0);
+        filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+        background-repeat: repeat-x;
+        border-color: #245580;
+        margin-bottom: 15px;
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+}

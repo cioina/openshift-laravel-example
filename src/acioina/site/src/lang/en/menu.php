@@ -1,0 +1,20 @@
+<?php
+return [
+    'data_protection_page'              => 'General Data Protection',
+    'faq_page'                          => 'Questions and Answers',
+    'my_profile'                        => 'My Profile',
+    'client_logout'                     => 'Log Out',
+    'client_login'                      => 'Log In',
+    'user_account'                      => 'User Account',
+    'search_pages'                      => 'Search',
+    'client_registration'               => 'Register / Edit Account',
+    'facebook_email'                    => 'Send Email',
+    'facebook_status'                   => 'Facebook Status',
+    'facebook_logout'                   => 'Facebook Logout',
+    'facebook_login'                    => 'Facebook Login',
+    'contact_page'                      => 'Contact Us',
+    'home_page'                         => 'Home',
+    'image'                             => 'Image Gallery',
+    'blog'                              => 'Blog',
+    'datatable'                         => 'List All',
+];
