@@ -1,0 +1,792 @@
+#acioina, #cioinaClose:active, #cioinaNext:active, #cioinaPrevious:active, #cioinaSlideshow:active, .mb_YTPlayer:focus {
+    outline: 0;
+}
+
+#loading-bar, #loading-bar-spinner {
+    pointer-events: none;
+    -webkit-pointer-events: none;
+    -webkit-transition: 350ms linear all;
+    -moz-transition: 350ms linear all;
+    -o-transition: 350ms linear all;
+    transition: 350ms linear all;
+}
+
+    #loading-bar-spinner.ng-enter, #loading-bar-spinner.ng-leave.ng-leave-active, #loading-bar.ng-enter, #loading-bar.ng-leave.ng-leave-active {
+        opacity: 0;
+    }
+
+        #loading-bar-spinner.ng-enter.ng-enter-active, #loading-bar-spinner.ng-leave, #loading-bar.ng-enter.ng-enter-active, #loading-bar.ng-leave {
+            opacity: 1;
+        }
+
+    #loading-bar .bar {
+        -webkit-transition: width 350ms;
+        -moz-transition: width 350ms;
+        -o-transition: width 350ms;
+        transition: width 350ms;
+        background: #29d;
+        position: fixed;
+        z-index: 10002;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        border-bottom-right-radius: 1px;
+        border-top-right-radius: 1px;
+    }
+
+    #loading-bar .peg {
+        position: absolute;
+        width: 70px;
+        right: 0;
+        top: 0;
+        height: 2px;
+        opacity: .45;
+        -moz-box-shadow: #29d 1px 0 6px 1px;
+        -ms-box-shadow: #29d 1px 0 6px 1px;
+        -webkit-box-shadow: #29d 1px 0 6px 1px;
+        box-shadow: #29d 1px 0 6px 1px;
+        -moz-border-radius: 100%;
+        -webkit-border-radius: 100%;
+        border-radius: 100%;
+    }
+
+#loading-bar-spinner {
+    display: block;
+    position: fixed;
+    z-index: 10002;
+    top: 10px;
+    left: 10px;
+}
+
+    #loading-bar-spinner .spinner-icon {
+        width: 14px;
+        height: 14px;
+        border: 2px solid transparent;
+        border-top-color: #29d;
+        border-left-color: #29d;
+        border-radius: 50%;
+        -webkit-animation: loading-bar-spinner .4s linear infinite;
+        -moz-animation: loading-bar-spinner .4s linear infinite;
+        -ms-animation: loading-bar-spinner .4s linear infinite;
+        -o-animation: loading-bar-spinner .4s linear infinite;
+        animation: loading-bar-spinner .4s linear infinite;
+    }
+
+@-webkit-keyframes loading-bar-spinner {
+    0% {
+        -webkit-transform: rotate(0);
+        transform: rotate(0);
+    }
+
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+@-moz-keyframes loading-bar-spinner {
+    0% {
+        -moz-transform: rotate(0);
+        transform: rotate(0);
+    }
+
+    100% {
+        -moz-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+@-o-keyframes loading-bar-spinner {
+    0% {
+        -o-transform: rotate(0);
+        transform: rotate(0);
+    }
+
+    100% {
+        -o-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+@-ms-keyframes loading-bar-spinner {
+    0% {
+        -ms-transform: rotate(0);
+        transform: rotate(0);
+    }
+
+    100% {
+        -ms-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes loading-bar-spinner {
+    0% {
+        transform: rotate(0);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+#flashContentLarge, #flashContentNormal, #youTubeContentSmall {
+    margin: 0 auto 10px;
+}
+
+#flashContentLarge, #flashContentNormal {
+    background-image: url(images/flash_background.gif);
+    background-repeat: repeat;
+    background-position: top right;
+    height: 100%;
+    padding: 5px 0 5px 5px;
+}
+
+#flashContentNormal {
+    width: 805px;
+}
+
+#flashContentLarge {
+    width: 900px;
+}
+
+.mb_YTPBar, .mb_YTPBar span.mb_YTPUrl a {
+    color: #fff;
+}
+
+.mbYTP_wrapper {
+    display: block;
+    transform: translateZ(0) translate3d(0,0,0);
+    transform-style: preserve-3d;
+    perspective: 1000px;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    box-sizing: border-box;
+}
+
+.mb_YTPlayer .mbYTP_Loading {
+    float: left;
+    position: relative;
+    top: 10px;
+    right: 10px;
+    margin-left: 15px;
+    color: #fff;
+    background: rgba(0,0,0,.51);
+    text-align: center;
+    padding: 2px 4px;
+    border-radius: 5px;
+    -webkit-animation: fade .1s infinite alternate;
+    animation: fade .1s infinite alternate;
+    font-size: 12px;
+    font-weight: 400;
+    font-style: normal;
+    font-family: Lato-Regular,sans-serif;
+}
+
+@-webkit-keyframes fade {
+    0% {
+        opacity: .5;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fade {
+    0% {
+        opacity: .5;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.fullscreen {
+    display: block !important;
+    position: fixed !important;
+    width: 100% !important;
+    height: 100% !important;
+    top: 0 !important;
+    left: 0 !important;
+    margin: 0 !important;
+    border: none !important;
+    opacity: 1 !important;
+}
+
+.mbYTP_wrapper iframe {
+    max-width: 4000px !important;
+}
+
+.mb_YTPBar, .mb_YTPBar .buttonBar {
+    box-sizing: border-box;
+    left: 0;
+    padding: 5px;
+    width: 100%;
+}
+
+.mb_YTPBar {
+    transition: opacity .5s;
+    display: block;
+    height: 10px;
+    background: #333;
+    position: fixed;
+    bottom: 0;
+    text-align: left;
+    z-index: 1000;
+    font: 14px/16px sans-serif;
+    opacity: .1;
+}
+
+    .mb_YTPBar.visible, .mb_YTPBar:hover {
+        opacity: 1;
+        background: url(images/noise.png) rgba(0,0,0,.6);
+    }
+
+    .mb_YTPBar .buttonBar {
+        transition: all .5s;
+        background: 0 0;
+        font: 12px/14px Calibri;
+        position: absolute;
+        top: -40px;
+    }
+
+    .mb_YTPBar:hover .buttonBar {
+        background: rgba(0,0,0,.4);
+    }
+
+    .mb_YTPBar span {
+        display: inline-block;
+        font: 16px/20px Calibri,sans-serif;
+        position: relative;
+        height: 10px;
+    }
+
+        .mb_YTPBar span.mb_YTPTime {
+            width: 125px;
+            margin-right: 5px;
+        }
+
+        .mb_YTPBar span.mb_YTPCount {
+            width: auto;
+            margin-right: 15px;
+        }
+
+span.mb_YTPUrl {
+    font-size: 34px;
+}
+
+.mb_YTPBar span.mb_YTPUrl {
+    position: absolute;
+    width: auto;
+    display: block;
+    top: 7px;
+    right: 10px;
+}
+
+.mb_YTPBar .mb_OnlyYT, .mb_YTPBar .mb_YTPMuteUnmute, .mb_YTPBar .mb_YTPPalyNext, .mb_YTPBar .mb_YTPPlaypause {
+    font: 20px/24px Calibri,sans-serif;
+    cursor: pointer;
+    height: 20px;
+    width: 20px;
+    margin-right: 5px;
+    padding: 5px;
+}
+
+.mb_YTPBar .mb_YTPProgress {
+    height: 10px;
+    width: 100%;
+    background: #222;
+    bottom: 0;
+    left: 0;
+}
+
+.mb_YTPBar .mb_YTPLoaded {
+    height: 10px;
+    width: 0;
+    background: #C80A0A;
+    left: 0;
+}
+
+.mb_YTPBar .mb_YTPseekbar {
+    height: 10px;
+    width: 0;
+    background: #f1e125;
+    bottom: 0;
+    left: 0;
+    box-shadow: rgba(82,82,82,.47) 1px 1px 3px;
+}
+
+.mb_YTPBar .YTPOverlay {
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    -webkit-transform-style: flat;
+    box-sizing: border-box;
+}
+
+#acioina, #cioinaOverlay, #cioinaWrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 99998;
+    overflow: hidden;
+    -webkit-transform: translate3d(0,0,0);
+}
+
+#cioinaOverlay {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    opacity: .9;
+    filter: alpha(opacity=90);
+}
+
+#cioinaBottomLeft, #cioinaMiddleLeft {
+    clear: left;
+}
+
+#cioinaContent {
+    position: relative;
+    background: #fff;
+    overflow: visible;
+}
+
+#cioinaTitle {
+    margin: 0;
+}
+
+#cioinaLoadingGraphic, #cioinaLoadingOverlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.cioinaPhoto {
+    float: left;
+    margin: auto;
+    border: 0;
+    display: block;
+    -ms-interpolation-mode: bicubic;
+}
+
+.cioinaIframe {
+    width: 100%;
+    height: 100%;
+    display: block;
+    border: 0;
+    padding: 0;
+    margin: 0;
+}
+
+#acioina, #cioinaContent, #cioinaLoadedContent {
+    box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    -webkit-box-sizing: content-box;
+}
+
+#cioinaTopLeft {
+    width: 14px;
+    height: 14px;
+    background: url(images/cb/controls.png) no-repeat;
+}
+
+#cioinaTopCenter {
+    height: 14px;
+    background: url(images/cb/border.png) top left repeat-x;
+}
+
+#cioinaTopRight {
+    width: 14px;
+    height: 14px;
+    background: url(images/cb/controls.png) -36px 0 no-repeat;
+}
+
+#cioinaBottomLeft {
+    width: 14px;
+    height: 43px;
+    background: url(images/cb/controls.png) 0 -32px no-repeat;
+}
+
+#cioinaBottomCenter {
+    height: 43px;
+    background: url(images/cb/border.png) bottom left repeat-x;
+}
+
+#cioinaBottomRight {
+    width: 14px;
+    height: 43px;
+    background: url(images/cb/controls.png) -36px -32px no-repeat;
+}
+
+#cioinaMiddleLeft {
+    width: 14px;
+    background: url(images/cb/controls.png) -175px 0 repeat-y;
+}
+
+#cioinaMiddleRight {
+    width: 14px;
+    background: url(images/cb/controls.png) -211px 0 repeat-y;
+}
+
+.cioinaIframe {
+    background: #fff;
+}
+
+#cioinaError {
+    padding: 50px;
+    border: 1px solid #ccc;
+}
+
+#cioinaLoadedContent {
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+    margin-bottom: 5px;
+}
+
+#cioinaLoadingOverlay {
+    background: url(images/cb/loading_background.png) center center no-repeat;
+}
+
+#cioinaLoadingGraphic {
+    background: url(images/cb/loading.gif) center center no-repeat;
+}
+
+#cioinaTitle {
+    position: absolute;
+    bottom: -25px;
+    left: 0;
+    text-align: center;
+    width: 100%;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 30px;
+    background: url(images/noise.png) rgba(0,0,0,.6);
+}
+
+#cioinaCurrent {
+    font-weight: 700;
+    color: #7C7C7C;
+    text-align: center;
+    padding-top: 3px;
+}
+
+#cioinaClose, #cioinaNext, #cioinaPrevious, #cioinaSlideshow {
+    cursor: pointer;
+    border: 0;
+    padding: 0;
+    margin: 0;
+    overflow: visible;
+    position: absolute;
+    bottom: -29px;
+    background: url(images/cb/controls.png) no-repeat;
+    width: 23px;
+    height: 23px;
+    text-indent: -9999px;
+    outline: 0;
+}
+
+#cioinaPrevious {
+    left: 0;
+    background-position: -51px -25px;
+}
+
+    #cioinaPrevious:hover {
+        background-position: -51px 0;
+    }
+
+#cioinaNext {
+    left: 47px;
+    background-position: -75px -25px;
+}
+
+    #cioinaNext:hover {
+        background-position: -75px 0;
+    }
+
+#cioinaClose {
+    right: 0;
+    background-position: -100px -25px;
+}
+
+    #cioinaClose:hover {
+        background-position: -100px 0;
+    }
+
+.cioinaSlideshow_on #cioinaSlideshow {
+    background-position: -125px 0;
+    right: 47px;
+}
+
+    .cioinaSlideshow_on #cioinaSlideshow:hover {
+        background-position: -125px 0;
+    }
+
+.cioinaSlideshow_off #cioinaSlideshow {
+    background-position: -150px -25px;
+    right: 47px;
+}
+
+    .cioinaSlideshow_off #cioinaSlideshow:hover {
+        background-position: -150px 0;
+    }
+
+/**
+ * prism.js Coy theme for JavaScript, CoffeeScript, CSS and HTML
+ * Based on https://github.com/tshedor/workshop-wp-theme (Example: http://workshop.kansan.com/category/sessions/basics or http://workshop.timshedor.com/category/sessions/basics);
+ * @author Tim  Shedor
+ */
+
+code[class*="language-"],
+pre[class*="language-"] {
+    color: black;
+    background: none;
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+    font-size: 1em;
+    text-align: left;
+    white-space: pre;
+    word-spacing: normal;
+    word-break: normal;
+    word-wrap: normal;
+    line-height: 1.5;
+    -moz-tab-size: 4;
+    -o-tab-size: 4;
+    tab-size: 4;
+    -webkit-hyphens: none;
+    -moz-hyphens: none;
+    -ms-hyphens: none;
+    hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+    position: relative;
+    margin: .5em 0;
+    overflow: visible;
+    padding: 0;
+}
+
+    pre[class*="language-"] > code {
+        position: relative;
+        border-left: 10px solid #358ccb;
+        box-shadow: -1px 0px 0px 0px #358ccb, 0px 0px 0px 1px #dfdfdf;
+        background-color: #fdfdfd;
+        background-image: linear-gradient(transparent 50%, rgba(69, 142, 209, 0.04) 50%);
+        background-size: 3em 3em;
+        background-origin: content-box;
+        background-attachment: local;
+    }
+
+code[class*="language-"] {
+    max-height: inherit;
+    height: inherit;
+    padding: 0 1em;
+    display: block;
+    overflow: auto;
+}
+
+/* Margin bottom to accommodate shadow */
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+    background-color: #fdfdfd;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    margin-bottom: 1em;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+    position: relative;
+    padding: .2em;
+    border-radius: 0.3em;
+    color: #c92c2c;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    display: inline;
+    white-space: normal;
+}
+
+pre[class*="language-"]:before,
+pre[class*="language-"]:after {
+    content: '';
+    z-index: -2;
+    display: block;
+    position: absolute;
+    bottom: 0.75em;
+    left: 0.18em;
+    width: 40%;
+    height: 20%;
+    max-height: 13em;
+    box-shadow: 0px 13px 8px #979797;
+    -webkit-transform: rotate(-2deg);
+    -moz-transform: rotate(-2deg);
+    -ms-transform: rotate(-2deg);
+    -o-transform: rotate(-2deg);
+    transform: rotate(-2deg);
+}
+
+pre[class*="language-"]:after {
+    right: 0.75em;
+    left: auto;
+    -webkit-transform: rotate(2deg);
+    -moz-transform: rotate(2deg);
+    -ms-transform: rotate(2deg);
+    -o-transform: rotate(2deg);
+    transform: rotate(2deg);
+}
+
+.token.comment,
+.token.block-comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+    color: #7D8B99;
+}
+
+.token.punctuation {
+    color: #5F6364;
+}
+
+.token.property,
+.token.tag,
+.token.boolean,
+.token.number,
+.token.function-name,
+.token.constant,
+.token.symbol,
+.token.deleted {
+    color: #c92c2c;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.function,
+.token.builtin,
+.token.inserted {
+    color: #2f9c0a;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.token.variable {
+    color: #a67f59;
+    background: rgba(255, 255, 255, 0.5);
+}
+
+.token.atrule,
+.token.attr-value,
+.token.keyword,
+.token.class-name {
+    color: #1990b8;
+}
+
+.token.regex,
+.token.important {
+    color: #e90;
+}
+
+.language-css .token.string,
+.style .token.string {
+    color: #a67f59;
+    background: rgba(255, 255, 255, 0.5);
+}
+
+.token.important {
+    font-weight: normal;
+}
+
+.token.bold {
+    font-weight: bold;
+}
+
+.token.italic {
+    font-style: italic;
+}
+
+.token.entity {
+    cursor: help;
+}
+
+.token.namespace {
+    opacity: .7;
+}
+
+@media screen and (max-width: 767px) {
+    pre[class*="language-"]:before,
+    pre[class*="language-"]:after {
+        bottom: 14px;
+        box-shadow: none;
+    }
+}
+
+/* Plugin styles: Line Numbers */
+pre[class*="language-"].line-numbers.line-numbers {
+    padding-left: 0;
+    font-size: medium;
+}
+
+    pre[class*="language-"].line-numbers.line-numbers code {
+        padding-left: 3.8em;
+    }
+
+    pre[class*="language-"].line-numbers.line-numbers .line-numbers-rows {
+        left: 0;
+    }
+
+/* Plugin styles: Line Highlight */
+pre[class*="language-"][data-line] {
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-left: 0;
+}
+
+pre[data-line] code {
+    position: relative;
+    padding-left: 4em;
+}
+
+pre .line-highlight {
+    margin-top: 0;
+}
+
+pre[data-number] {
+    position: relative;
+    padding: 1em 0 1em 3em;
+}
+
+.line-numbers .line-numbers-rows {
+	position: absolute;
+	pointer-events: none;
+	top: 0;
+	font-size: 100%;
+	left: -3.8em;
+	width: 3em; /* works for line-numbers below 1000 lines */
+	letter-spacing: -1px;
+	border-right: 1px solid #999;
+
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+
+}
+
+	.line-numbers-rows > span {
+		display: block;
+		counter-increment: linenumber;
+	}
+
+		.line-numbers-rows > span:before {
+			content: counter(linenumber);
+			color: #999;
+			display: block;
+			padding-right: 0.8em;
+			text-align: right;
+		}

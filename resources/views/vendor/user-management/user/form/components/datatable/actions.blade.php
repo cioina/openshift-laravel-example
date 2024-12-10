@@ -1,0 +1,1 @@
+    <a href="{{ \Distilleries\Expendable\Helpers\FormUtils::tryHttps(action($route.'getView',isset($data['slug'])?$data['slug']:$data['id'])) }}" class="btn btn-sm blue filter-submit margin-bottom-5"><i class="glyphicon glyphicon-zoom-in"></i> {{trans('user-management::datatable.view')}}</a>

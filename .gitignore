@@ -1,0 +1,9 @@
+# See http://help.github.com/ignore-files/ for more about ignoring files.
+# We do not need this on github
+# IDE - VSCode
+.vscode/*
+.vs/*
+
+# System Files
+.DS_Store
+Thumbs.db
