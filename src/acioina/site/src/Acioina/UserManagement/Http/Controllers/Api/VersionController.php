@@ -6,7 +6,7 @@ use Acioina\UserManagement\Transformers\VersionTransformer;
 
 class VersionController extends ApiController
 {
-    private const ANGULAR_APP_HASH = '8f788b5bd28bb94be2ba892eef0de1e4';
+    private const ANGULAR_APP_HASH = 'b476a80d7b15a94ea561d19fa465c824';
 
     public function __construct(VersionTransformer $transformer)
     {

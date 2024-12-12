@@ -9,7 +9,7 @@
       use Distilleries\FormBuilder\Contracts\FormStateContract;
       use \FormBuilder;
 
-      class PostTopicController extends ModelBaseController  implements FormStateContract 
+      class PostTopicController extends ModelBaseController  implements FormStateContract
       {
           use FormStateTrait;
 
@@ -34,17 +34,17 @@
               {
                   return $form->validateAndRedirectBack();
               }
-              
+
               $postId = $request->get($this->model->getKeyName());
-              if(isset($postId))
+              if(! empty($postId) && isset($postId))
               {
                   PostTopic::where('post_id', '=', $postId)->delete();
               }
-              
+
               $postTopics = $request->get('post_topics');
-              if(isset($postTopics))
+              if(! empty($postTopics) && isset($postTopics))
               {
-                  foreach ($postTopics as $post_id=>$topics) 
+                  foreach ($postTopics as $post_id=>$topics)
                   {
                       foreach ($topics as $topic_id)
                       {

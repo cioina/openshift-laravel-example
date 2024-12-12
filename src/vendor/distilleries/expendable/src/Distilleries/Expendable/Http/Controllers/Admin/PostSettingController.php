@@ -9,7 +9,7 @@
       use Distilleries\FormBuilder\Contracts\FormStateContract;
       use \FormBuilder;
 
-      class PostSettingController extends ModelBaseController  implements FormStateContract 
+      class PostSettingController extends ModelBaseController  implements FormStateContract
       {
 
           use FormStateTrait;
@@ -37,15 +37,15 @@
               }
 
               $post = $request->get($this->model->getKeyName());
-              if(isset($post))
+              if(! empty($post) && isset($post))
               {
                   PostSetting::where('post_id', '=', $post)->delete();
               }
 
               $postSettings = $request->get('post_settings');
-              if(isset($postSettings))
+              if(! empty($postSettings) && isset($postSettings))
               {
-                  foreach ($postSettings as $post_id => $settings) 
+                  foreach ($postSettings as $post_id => $settings)
                   {
                       foreach ($settings as $setting_id)
                       {

@@ -10,7 +10,7 @@
       use Illuminate\Http\Request;
       use \FormBuilder;
 
-      class PostImageController extends ModelBaseController  implements FormStateContract 
+      class PostImageController extends ModelBaseController  implements FormStateContract
       {
 
           use FormStateTrait;
@@ -38,15 +38,15 @@
               }
 
               $blog = $request->get($this->model->getKeyName());
-              if(isset($blog))
+              if(! empty($blog) && isset($blog))
               {
                   PostImage::where('post_id', '=', $blog)->delete();
               }
-              
+
               $blogImages = $request->get('post_images');
-              if(isset($blogImages))
+              if(! empty($blogImages) && isset($blogImages))
               {
-                  foreach ($blogImages as $post_id=>$facebookImages) 
+                  foreach ($blogImages as $post_id=>$facebookImages)
                   {
                       foreach ($facebookImages as $image_id)
                       {

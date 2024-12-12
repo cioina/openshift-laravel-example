@@ -11,7 +11,7 @@ $(function () {
     Alpaca.registerMessages({
         "facebook_disabled": "We are sorry, but Facebook login is disabled at this time.",
         "throttle_login": "Too many login attempts. Come back in {0} minutes.",
-        "wrong_login": "Incorrect login or password (ERROR: {0}.)",
+        "wrong_login": "Incorrect login or password (ERROR: {0}.) If error code is 4, try to log in from User Account -> Log In",
         "activation_code_error": "This activation code is incorrect. Please check out your email and copy and paste the activation code.",
         "graph_error": "Something went wrong {0}",
         "incorrect_today_date": "Please make sure you entered today&#039;s date from Greenwich Mean Time (GMT) time zone.",

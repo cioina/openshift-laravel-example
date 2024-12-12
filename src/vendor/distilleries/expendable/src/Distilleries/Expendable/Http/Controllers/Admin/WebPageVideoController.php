@@ -9,7 +9,7 @@
       use Distilleries\FormBuilder\Contracts\FormStateContract;
       use \FormBuilder;
 
-      class WebPageVideoController extends ModelBaseController  implements FormStateContract 
+      class WebPageVideoController extends ModelBaseController  implements FormStateContract
       {
 
           use FormStateTrait;
@@ -37,15 +37,15 @@
               }
 
               $webPage = $request->get($this->model->getKeyName());
-              if(isset($webPage))
+              if(! empty($webPage) && isset($webPage))
               {
                   WebPageVideo::where('web_page_id', '=', $webPage)->delete();
               }
 
               $webpageVideos = $request->get('web_page_videos');
-              if(isset($webpageVideos))
+              if(! empty($webpageVideos) && isset($webpageVideos))
               {
-                  foreach ($webpageVideos as $webpage_id=>$youtubeVideos) 
+                  foreach ($webpageVideos as $webpage_id=>$youtubeVideos)
                   {
                       foreach ($youtubeVideos as $video_id)
                       {

@@ -9,7 +9,7 @@
       use Distilleries\FormBuilder\Contracts\FormStateContract;
       use \FormBuilder;
 
-      class PostVideoController extends ModelBaseController  implements FormStateContract 
+      class PostVideoController extends ModelBaseController  implements FormStateContract
       {
 
           use FormStateTrait;
@@ -37,15 +37,15 @@
               }
 
               $post = $request->get($this->model->getKeyName());
-              if(isset($post))
+              if(! empty($post) && isset($post))
               {
                   PostVideo::where('post_id', '=', $post)->delete();
               }
 
               $postVideos = $request->get('post_videos');
-              if(isset($postVideos))
+              if(! empty($postVideos) && isset($postVideos))
               {
-                  foreach ($postVideos as $post_id => $youtubeVideos) 
+                  foreach ($postVideos as $post_id => $youtubeVideos)
                   {
                       foreach ($youtubeVideos as $video_id)
                       {

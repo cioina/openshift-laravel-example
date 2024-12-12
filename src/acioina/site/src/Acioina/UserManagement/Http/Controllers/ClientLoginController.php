@@ -485,7 +485,7 @@
 
               $httpReferer = $_SERVER['HTTP_REFERER'];
 
-              if ( ! isset($httpReferer) || ! Str::startsWith($httpReferer, $referrer))
+              if (empty($httpReferer) || ! Str::startsWith($httpReferer, $referrer))
               {
                   $this->sendErrorJsonWithParameter('wrong_login', 4);
                   return false;

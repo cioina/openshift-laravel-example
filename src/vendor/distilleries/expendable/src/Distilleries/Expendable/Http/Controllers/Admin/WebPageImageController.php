@@ -9,7 +9,7 @@
       use Distilleries\FormBuilder\Contracts\FormStateContract;
       use \FormBuilder;
 
-      class WebPageImageController extends ModelBaseController  implements FormStateContract 
+      class WebPageImageController extends ModelBaseController  implements FormStateContract
       {
 
           use FormStateTrait;
@@ -37,15 +37,15 @@
               }
 
               $webPage = $request->get($this->model->getKeyName());
-              if(isset($webPage))
+              if(! empty($webPage) && isset($webPage))
               {
                   WebPageImage::where('web_page_id', '=', $webPage)->delete();
               }
 
               $blogImages = $request->get('web_page_images');
-              if(isset($blogImages))
+              if(! empty($blogImages) && isset($blogImages))
               {
-                  foreach ($blogImages as $post_id=>$facebookImages) 
+                  foreach ($blogImages as $post_id=>$facebookImages)
                   {
                       foreach ($facebookImages as $image_id)
                       {

@@ -9,7 +9,7 @@
       use Distilleries\FormBuilder\Contracts\FormStateContract;
       use \FormBuilder;
 
-      class WebPageSettingController extends ModelBaseController  implements FormStateContract 
+      class WebPageSettingController extends ModelBaseController  implements FormStateContract
       {
 
           use FormStateTrait;
@@ -37,15 +37,15 @@
               }
 
               $webPage = $request->get($this->model->getKeyName());
-              if(isset($webPage))
+              if(! empty($webPage) && isset($webPage))
               {
                   WebPageSetting::where('web_page_id', '=', $webPage)->delete();
               }
 
               $pageSettings = $request->get('web_page_settings');
-              if(isset($pageSettings))
+              if(! empty($pageSettings) && isset($pageSettings))
               {
-                  foreach ($pageSettings as $page_id=>$settings) 
+                  foreach ($pageSettings as $page_id=>$settings)
                   {
                       foreach ($settings as $setting_id)
                       {

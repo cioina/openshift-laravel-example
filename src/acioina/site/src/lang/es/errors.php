@@ -5,7 +5,7 @@ return [
     'oops'            => '¡Vaya! Algo salió mal.',
     'fixing_it'       => '¡Lo estamos arreglando!',
 
-    'cookies_message' => 'Nos mudamos a un nuevo sitio web basado en Angular 11',
+    'cookies_message' => 'Nos mudamos a un nuevo sitio web basado en Angular 19+',
     'cookies_accept'  => 'Usted aceptó las cookies de este sitio web.', 
     'click_gotIt'     => 'Entendido',
     'click_readMore'  => 'Lee mas',

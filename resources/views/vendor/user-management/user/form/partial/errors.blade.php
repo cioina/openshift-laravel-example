@@ -5,7 +5,9 @@
         {{trans('user-management::errors.cookies_message')}}
      </h3>
     <a href="{{ \Distilleries\Expendable\Helpers\FormUtils::tryHttps(action('\\Acioina\\UserManagement\\Http\Controllers\\ClientLogoutController@getCookies')) }}" target="_self" class="btn btn-sm green margin-bottom-5"><i class="glyphicon glyphicon-ok"></i> {{trans('user-management::errors.click_gotIt')}}</a>
-    <a href="{{ \Distilleries\Expendable\Helpers\FormUtils::tryHttps(action('\\Acioina\\UserManagement\\Http\Controllers\\FrontEndController@getIndex')) }}" target="_self" class="btn btn-sm blue margin-bottom-5"><i class="glyphicon glyphicon-info-sign"></i> {{trans('user-management::errors.click_readMore')}}</a>
+    <a href="https://cioina.azurewebsites.net/" target="_self" class="btn btn-sm blue margin-bottom-5">
+        <i class="glyphicon glyphicon-info-sign"></i> {{trans('user-management::errors.click_readMore')}}
+    </a>
   </div>
 @endif
 

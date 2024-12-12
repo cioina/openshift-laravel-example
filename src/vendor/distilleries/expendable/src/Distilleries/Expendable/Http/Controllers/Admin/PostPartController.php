@@ -9,7 +9,7 @@
       use Distilleries\FormBuilder\Contracts\FormStateContract;
       use \FormBuilder;
 
-      class PostPartController extends ModelBaseController  implements FormStateContract 
+      class PostPartController extends ModelBaseController  implements FormStateContract
       {
 
           use FormStateTrait;
@@ -37,17 +37,17 @@
               }
 
               $blog = $request->get($this->model->getKeyName());
-              if(isset($blog))
+              if(! empty($blog) && isset($blog))
               {
                   PostPart::where('post_id', '=', $blog)->delete();
               }
-              
+
               $blogParts = $request->get('post_parts');
-              if(isset($blogParts))
+              if(! empty($blogParts) && isset($blogParts))
               {
-                  foreach ($blogParts as $post_id=>$codeBlocks) 
+                  foreach ($blogParts as $post_id=>$codeBlocks)
                   {
-                      foreach ($codeBlocks as $code_block_id) 
+                      foreach ($codeBlocks as $code_block_id)
                       {
                           $partModel = new $this->model;
                           $partModel->post_id = $post_id;
@@ -56,7 +56,7 @@
                       }
                   }
               }
-              
+
               return redirect()->to(action('\Distilleries\Expendable\Http\Controllers\Admin\PostController@getIndex'), 302, [], $GLOBALS['CIOINA_Config']->get('ForceSSL'));
           }
       }

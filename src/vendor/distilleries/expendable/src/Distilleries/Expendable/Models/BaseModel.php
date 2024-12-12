@@ -64,15 +64,16 @@
 
               if($addNewData)
               {
-                  return $dataDir. DIRECTORY_SEPARATOR . $managerRoot. DIRECTORY_SEPARATOR . $GLOBALS['CIOINA_Config']->get('NewPostsDir') . DIRECTORY_SEPARATOR . $tableName . '.xls';
+                  return $dataDir. DIRECTORY_SEPARATOR . $managerRoot. DIRECTORY_SEPARATOR . $GLOBALS['CIOINA_Config']->get('NewPostsDir') . DIRECTORY_SEPARATOR . $tableName;
               }else{
-                  return $dataDir. DIRECTORY_SEPARATOR . $managerRoot. DIRECTORY_SEPARATOR . $tableName . '.xls';
+                  return $dataDir. DIRECTORY_SEPARATOR . $managerRoot. DIRECTORY_SEPARATOR . $tableName;
               }
           }
 
           public static function excelFileExists($addNewData = false)
           {
-              return \File::exists(self::getExportFile($addNewData));
+              $file = self::getExportFile($addNewData);
+              return  (\File::exists($file . '.xls') || \File::exists($file . '.csv'));
           }
 
           public static function exportAll()
@@ -81,7 +82,7 @@
 
               $file = self::getExportFile();
 
-              if (\File::exists($file) )
+              if (\File::exists($file . '.xls') )
               {
                   return;
               }
@@ -121,16 +122,22 @@
 
               if(config('database.default') === 'testbench')
               {
-                  \DB::update("UPDATE SQLITE_SEQUENCE SET seq = 0 WHERE name = '$tableName'");
+                  DB::update("UPDATE SQLITE_SEQUENCE SET seq = 0 WHERE name = '$tableName'");
               }else{
-                  \DB::update("ALTER TABLE $tableName AUTO_INCREMENT = 0;");
+                  DB::update("ALTER TABLE $tableName AUTO_INCREMENT = 0;");
               }
 
-              if (! app('files')->exists($file) )
+              if (app('files')->exists($file . '.xls'))
               {
+                  $file .= '.xls';
+                  $exporter = app('XlsImporterContract');
+              }elseif(app('files')->exists($file . '.csv')){
+                  $file .= '.csv';
+                  $exporter = app('CsvImporterContract');
+              }else{
                   return;
               }
-              $exporter = app('XlsImporterContract');
+
               $data = $exporter->getArrayDataFromFile($file);
 
               $auto_id = 0;
@@ -144,6 +151,30 @@
                           {
                               $auto_id = $item['id'];
                           }
+                      }
+
+                      switch($key) {
+                          case 'cache_key':
+                              if(empty($val))
+                              {
+                                  $item[$key] = Str::uuid();
+                              }
+                              break;
+                          case 'status':
+                              if(empty($val))
+                              {
+                                  $item[$key] = 0;
+                              }
+                              break;
+                          case 'created_at':
+                          case 'updated_at':
+                              if(!empty($val))
+                              {
+                                  $item[$key] = \DateTime::createFromFormat('Y-m-d H:i:s', $val);
+                              }
+                              break;
+                          default:
+                              break;
                       }
 
                       switch($tableName)
@@ -230,33 +261,14 @@
                                       break;
                               }
                               break;
-                          case 'settings':
-                              switch($key) {
-                                  case 'cache_key':
-                                      if(empty($val))
-                                      {
-                                          $item[$key] = Str::uuid();
-                                      }
-                                      break;
-                                  default:
-                                      break;
-                              }
-                              break;
                           case 'web_pages':
                               switch($key) {
                                   case 'has_form':
                                   case 'is_public':
                                   case 'is_raw':
-                                  case 'status':
                                       if(empty($val))
                                       {
                                           $item[$key] = 0;
-                                      }
-                                      break;
-                                  case 'cache_key':
-                                      if(empty($val))
-                                      {
-                                          $item[$key] = Str::uuid();
                                       }
                                       break;
                                   default:
@@ -267,16 +279,9 @@
                               switch($key) {
                                   case 'facebook_image_id':
                                   case 'is_raw':
-                                  case 'status':
                                       if(empty($val))
                                       {
                                           $item[$key] = 0;
-                                      }
-                                      break;
-                                  case 'cache_key':
-                                      if(empty($val))
-                                      {
-                                          $item[$key] = Str::uuid();
                                       }
                                       break;
                                   default:
@@ -285,12 +290,6 @@
                               break;
                           case 'emails':
                               switch($key) {
-                                  case 'status':
-                                      if(empty($val))
-                                      {
-                                          $item[$key] = 0;
-                                      }
-                                      break;
                                   case 'cc':
                                   case 'bcc':
                                       if(empty($val))
@@ -330,7 +329,6 @@
                           case 'facebook_images':
                               switch($key) {
                                   case 'is_expired':
-                                  case 'status':
                                       if(empty($val))
                                       {
                                           $item[$key] = 0;
@@ -354,22 +352,7 @@
                               break;
                           case 'youtube_videos':
                               switch($key) {
-                                  case 'status':
                                   case 'video_type':
-                                      if(empty($val))
-                                      {
-                                          $item[$key] = 0;
-                                      }
-                                      break;
-                                  default:
-                                      break;
-                              }
-                              break;
-                          case 'users':
-                          case 'topics':
-                          case 'code_blocks':
-                              switch($key) {
-                                  case 'status':
                                       if(empty($val))
                                       {
                                           $item[$key] = 0;
@@ -385,7 +368,7 @@
                       }
 
                   }
-                  \DB::table($tableName)->insert($item);
+                  DB::table($tableName)->insert($item);
               }
 
               if ($auto_id > 0)
@@ -394,9 +377,9 @@
 
                   if(config('database.default') === 'testbench')
                   {
-                      \DB::update("UPDATE SQLITE_SEQUENCE SET seq = $auto_id WHERE name = '$tableName'");
+                      DB::update("UPDATE SQLITE_SEQUENCE SET seq = $auto_id WHERE name = '$tableName'");
                   }else{
-                      \DB::update("ALTER TABLE $tableName AUTO_INCREMENT = $auto_id;");
+                      DB::update("ALTER TABLE $tableName AUTO_INCREMENT = $auto_id;");
                   }
               }
 

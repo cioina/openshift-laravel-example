@@ -5,7 +5,7 @@ return [
     'oops'            => 'Oops! Something went wrong.',
     'fixing_it'       => 'We are fixing it!',
 
-    'cookies_message' => 'We are moving to a new website based on Angular 11+ ',
+    'cookies_message' => 'We are moving to a new website based on Angular 19+ ',
     'cookies_accept'  => 'You have accepted cookies form this website.', 
     'click_gotIt'     => 'Got It',
     'click_readMore'  => 'Read More...',

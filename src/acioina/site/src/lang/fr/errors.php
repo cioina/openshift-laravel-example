@@ -5,7 +5,7 @@ return [
     'oops'            => 'Oups! Quelque-chose s\'est mal passé.',
     'fixing_it'       => 'Nous le fixons!',
 
-    'cookies_message' => 'Nous passons à un nouveau site Web basé sur Angular 11',
+    'cookies_message' => 'Nous passons à un nouveau site Web basé sur Angular 19+',
     'cookies_accept'  => 'Vous avez accepté les cookies de ce site.', 
     'click_gotIt'     => 'J\'ai compris',
     'click_readMore'  => 'Lire la suite',

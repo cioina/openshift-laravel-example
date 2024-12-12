@@ -2,7 +2,7 @@
 
 return [
     'manager_root_dir'      => 'filemanager',
-    'get_area_top_records'  => 30,
+    'get_area_top_records'  => 300,
     'login_uri'             => $GLOBALS['CIOINA_Config']->get('LaravelAdminUri').'/login',
     'admin_base_uri'        => $GLOBALS['CIOINA_Config']->get('LaravelAdminUri'),
     'blog_view_uri'         => '/blog/view/',
