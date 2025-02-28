@@ -75,7 +75,7 @@ Lock file operations: 55 installs, 0 updates, 0 removals
   - Locking webmozart/assert (1.11.0)
 ```
 
-In addition, we use a few PHP packages adapted for Laravel 8 framework and PHP 7.3 direct from sources.
+In addition, we use a few PHP packages adapted for Laravel 8 framework and PHP ^7.3 direct from sources.
 
 ```json
 {
